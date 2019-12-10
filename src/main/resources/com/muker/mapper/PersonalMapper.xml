@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.muker.dao.PersonalDao">
+    <resultMap id="BaseResultMap" type="com.muker.entity.UsersInfos">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="rid" property="rid" jdbcType="INTEGER"/>
+        <result column="rusername" jdbcType="VARCHAR" property="rusername"/>
+        <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+        <result column="position" jdbcType="VARCHAR" property="position"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="idiograph" jdbcType="VARCHAR" property="idiograph"/>
+        <result column="label" jdbcType="VARCHAR" property="label"/>
+    </resultMap>
+
+    <select id="selectUserByPhone" resultMap="BaseResultMap">
+    select * from UsersInfos where phone=#{phone}
+    </select>
+
+
+</mapper>

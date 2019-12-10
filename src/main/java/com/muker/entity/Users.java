@@ -10,4 +10,6 @@ public class Users {
     private String phone;
 
     private String password;
+    //权限
+    private String perms;
 }
