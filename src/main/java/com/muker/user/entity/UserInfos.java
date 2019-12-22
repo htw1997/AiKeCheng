@@ -3,13 +3,13 @@ package com.muker.user.entity;
 import lombok.Data;
 
 /**
- * @ClassName UserInfo
+ * @ClassName UserInfos
  * @Description
  * @Author JavaQ
  * @Date 2019/12/18 11:26
  **/
 @Data
-public class UserInfo {
+public class UserInfos {
     private Integer id;
     private Integer rid;
 }

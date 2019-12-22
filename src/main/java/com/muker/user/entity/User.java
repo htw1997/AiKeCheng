@@ -1,6 +1,6 @@
 package com.muker.user.entity;
 
-import com.muker.entity.UsersInfos;
+
 import lombok.Data;
 
 /**

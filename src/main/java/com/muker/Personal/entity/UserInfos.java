@@ -1,9 +1,9 @@
-package com.muker.entity;
+package com.muker.Personal.entity;
 
 import lombok.Data;
 
 @Data
-public class UsersInfos {
+public class UserInfos {
 
     private Integer id;
     //注册序号
@@ -22,4 +22,10 @@ public class UsersInfos {
     private String idiograph;
     //关注标签
     private String label;
+    //头像
+    private String headimage;
+
+    private String email;
+    //邮箱验证码
+    private String emailCode;
 }

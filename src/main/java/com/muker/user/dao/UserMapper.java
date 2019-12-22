@@ -1,7 +1,7 @@
 package com.muker.user.dao;
 
 
-import com.muker.entity.UsersInfos;
+import com.muker.user.entity.UserInfos;
 import com.muker.user.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultType;
@@ -20,6 +20,6 @@ public interface UserMapper {
     @ResultType(User.class)
     User selectById(@Param("id") int id);
 
-    UsersInfos selectUserInfo(String phone);
+    UserInfos selectUserInfo(String phone);
 
 }

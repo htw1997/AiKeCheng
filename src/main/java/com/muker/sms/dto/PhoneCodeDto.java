@@ -1,4 +1,4 @@
-package com.muker.user.sms.dto;
+package com.muker.sms.dto;
 
 import lombok.Data;
 

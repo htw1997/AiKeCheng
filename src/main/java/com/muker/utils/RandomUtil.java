@@ -33,6 +33,7 @@ public class RandomUtil {
                     //已分配 重新生成
                     c=random.nextInt(total)+1;
                 }
+
                 arr[lg]=c;
                 map.get(i).add(c);
                 lg++;
