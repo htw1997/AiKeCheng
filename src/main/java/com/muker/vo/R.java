@@ -33,4 +33,8 @@ public class R {
     public static R fail(String msg) {
         return setR(ResultCode.ERROR.getVal(),msg,null);
     }
+
+    public static R noau(String msg) {
+        return setR(ResultCode.NOAUTH.getVal(),msg,null);
+    }
 }

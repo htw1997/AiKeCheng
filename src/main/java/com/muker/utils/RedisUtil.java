@@ -275,12 +275,12 @@ public class RedisUtil {
      *            过期时间，单位：秒
      * @return 成功返回1 如果存在 和 发生异常 返回 0
      */
-    public Long expire(String key, int value, int indexdb) {
+    public Long expire(String key, int seconds, int indexdb) {
         Jedis jedis = null;
         try {
             jedis = jedisPool.getResource();
             jedis.select(indexdb);
-            return jedis.expire(key, value);
+            return jedis.expire(key, seconds);
         } catch (Exception e) {
             log.error(e.getMessage());
             return 0L;
@@ -2292,6 +2292,9 @@ public class RedisUtil {
     // public static void setRu(RedisUtil ru) {
     // RedisUtil.ru = ru;
     // }
+    public void setExpire(String key,int seconds){
+        jedisPool.getResource().expire(key,seconds);
+    }
 
     public static void main(String[] args) {
 		/*JedisPool jedisPool = new JedisPool(null,"localhost",6379,100,"123456");

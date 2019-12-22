@@ -1,10 +1,12 @@
 package com.muker.config;
 
+import com.muker.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -27,15 +29,16 @@ public class RedisConfig {
 
     @Value("${spring.redis.jedis.pool.max-wait}")
     private long maxWaitMillis;
-
+    @Value("${spring.redis.password}")
+    private String password;
     /*@Value("${spring.redis.password}")
     private String password;*/
 
     @Value("${spring.redis.block-when-exhausted}")
-    private boolean  blockWhenExhausted;
+    private boolean blockWhenExhausted;
 
     @Bean
-    public JedisPool redisPoolFactory()  throws Exception{
+    public JedisPool redisPoolFactory() throws Exception {
         log.info("JedisPool注入成功！！");
         log.info("redis地址：" + host + ":" + port);
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
@@ -46,8 +49,8 @@ public class RedisConfig {
         // 是否启用pool的jmx管理功能, 默认true
         jedisPoolConfig.setJmxEnabled(true);
         //JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout, password);
-        JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout);
-        return jedisPool;
+        return new JedisPool(jedisPoolConfig, host, port, timeout,password);
     }
+
 
 }
