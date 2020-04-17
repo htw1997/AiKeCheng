@@ -29,12 +29,12 @@ public class AliSmsUntil {
          * @param code 验证码 4位 电话
          */
         public static void sendSmsCode(String rusername, int code) {
-            DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAIhTvqTSmlmjeQ", "X7X9w0Ck5GEIWgP9tl0Q6sgmFjQuMv");
+            DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "", "");
             IAcsClient client = new DefaultAcsClient(profile);
 
             CommonRequest request = new CommonRequest();
             request.setMethod(MethodType.POST);
-            request.setDomain("dysmsapi.aliyuncs.com");
+            request.setDomain("");
             request.setVersion("2017-05-25");
             request.setAction("SendSms");
             request.putQueryParameter("RegionId", "cn-hangzhou");
