@@ -13,7 +13,7 @@
         insert into users(phone, password, perms) values (#{phone},#{password},1)
     </insert>
 
-    <select id="selectUserInfo" resultType="com.muker.entity.UsersInfos">
+    <select id="selectUserInfo" resultType="com.muker.user.entity.UserInfos">
         select us.* from userinfos us left join users u on u.id = us.rid where u.phone = #{phone}
     </select>
 

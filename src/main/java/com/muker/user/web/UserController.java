@@ -25,19 +25,19 @@ public class UserController {
     private UserService userService;
 
     @ApiOperation(value = "实现用户登录", notes = "实现用户登录")
-    @GetMapping("/aimu/user/login.do")
+    @GetMapping("/api/user/login.do")
     public R login(String phone,String password) {
         return userService.login(phone, password);
     }
 
     @ApiOperation(value = "实现用户名的校验", notes = "实现用户名的校验")
-    @GetMapping("/aimu/user/check.do")
+    @GetMapping("/api/user/check.do")
     public R check(String phone) {
         return userService.checkUser(phone);
     }
 
     @ApiOperation(value = "根据Id查询用户", notes = "根据Id查询用户")
-    @GetMapping("/aimu/user/querybyid.do")
+    @GetMapping("/api/user/querybyid.do")
     @CrossOrigin
     public R queryById(HttpServletRequest request) {
         String token = request.getHeader("aimutoken");

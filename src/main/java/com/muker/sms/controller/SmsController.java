@@ -1,8 +1,8 @@
-package com.muker.user.sms.controller;
+package com.muker.sms.controller;
 
 
-import com.muker.user.sms.dto.PhoneCodeDto;
-import com.muker.user.sms.service.SmsService;
+import com.muker.sms.dto.PhoneCodeDto;
+import com.muker.sms.service.SmsService;
 import com.muker.vo.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

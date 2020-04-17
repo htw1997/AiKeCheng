@@ -1,8 +1,8 @@
-package com.muker.user.sms.service.impl;
+package com.muker.sms.service.impl;
 
 import com.muker.config.RedisKeyConfig;
-import com.muker.user.sms.dto.PhoneCodeDto;
-import com.muker.user.sms.service.SmsService;
+import com.muker.sms.dto.PhoneCodeDto;
+import com.muker.sms.service.SmsService;
 import com.muker.utils.AliSmsUtil;
 import com.muker.utils.DateUtil;
 import com.muker.utils.RandomUtil;

@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
+@MapperScan("com.muker.Personal.dao")
 @MapperScan("com.muker.user.dao")
 @EnableSwagger2
 public class MukerApplication {

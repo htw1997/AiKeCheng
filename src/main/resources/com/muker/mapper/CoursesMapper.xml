@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muker.courses.dao.CoursesDao">
+    <resultMap id="CoursesMap" type="com.muker.courses.entity.Courses">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="coursename" property="coursename" jdbcType="VARCHAR"/>
+        <result column="introduce" jdbcType="VARCHAR" property="introduce"/>
+        <result column="chapter" jdbcType="VARCHAR" property="chapter"/>
+        <result column="author" jdbcType="VARCHAR" property="author"/>
+        <result column="duration" jdbcType="VARCHAR" property="duration"/>
+        <result column="diffculty" jdbcType="VARCHAR" property="diffculty"/>
+        <result column="newprices" jdbcType="INTEGER" property="newprices"/>
+        <result column="oldprices" jdbcType="INTEGER" property="oldprices"/>
+        <result column="discounts" jdbcType="INTEGER" property="discounts"/>
+        <result column="free" jdbcType="VARCHAR" property="free"/>
+        <result column="vedio" jdbcType="VARCHAR" property="video"/>
+        <result column="img" jdbcType="VARCHAR" property="img"/>
+        <result column="peoplenum" jdbcType="INTEGER" property="peoplenum"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.muker.courses.entity.Courses">
+        insert into courses (coursename, introduce, chapter, author, duration, diffculty, newprices, oldprices,
+        discounts, free, vedio, img, peoplenum)
+        values (#{coursename}, #{introduce}, #{chapter}, #{author}, #{duration}, #{diffculty}, #{newprices},
+        #{oldprices}, #{discounts}, #{free}, #{vedio}, #{img}, #{peoplenum})
+    </insert>
+
+    <select id="selectAll" resultMap="CoursesMap">
+        select * from courses
+    </select>
+
+    <select id="selectById" resultMap="CoursesMap">
+        select * from courses where id = #{id}
+    </select>
+</mapper>

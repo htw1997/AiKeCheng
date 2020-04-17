@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserService {
         if (user != null && password.equals(user.getPassword())) {
             String token = JwtUtil.createJWT(user.getId().toString());
             redisUtil.setex(RedisKeyConfig.TOKEN_KEY + phone, token, RedisKeyConfig.TOKEN_TIME);
+
             Map<String,Object> usermap = new HashMap<>();
             usermap.put("token",token);
             usermap.put("user",user);
