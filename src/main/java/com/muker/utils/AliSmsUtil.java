@@ -20,17 +20,17 @@ public class AliSmsUtil {
      * 发送短信验证码 有效期10分钟
      * @param code 验证码 6位*/
     public static void sendSmsCode(int code,String phone){
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4FuYMoEUisY5TpGM7CzF", "DTwY0ewrvKBe8TpXKGFm3MzKHFK9BQ");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "", "");
         IAcsClient client = new DefaultAcsClient(profile);
         CommonRequest request = new CommonRequest();
         request.setMethod(MethodType.POST);
-        request.setDomain("dysmsapi.aliyuncs.com");
+        request.setDomain("");
         request.setVersion("2017-05-25");
         request.setAction("SendSms");
         request.putQueryParameter("RegionId", "cn-hangzhou");
         request.putQueryParameter("PhoneNumbers", phone);
         request.putQueryParameter("SignName", "车享用");
-        request.putQueryParameter("TemplateCode", "SMS_180057387");
+        request.putQueryParameter("TemplateCode", "");
         request.putQueryParameter("TemplateParam", "{\"code\":\""+code+"\"}");
         try {
             CommonResponse response = client.getCommonResponse(request);
